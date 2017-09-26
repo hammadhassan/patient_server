@@ -7,11 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index"
   },
-  "author": "",
+  "author": "Hammad Hassan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "mongoose": "^4.11.7"
+    "mongoose": "^4.11.7",
+    "nodemon": "^1.12.1"
   }
 }

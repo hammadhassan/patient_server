@@ -14,23 +14,28 @@ mongoose.Promise = global.Promise
 
 app.use(bodyparser.json())
 
-app.get('/', function(req, res, next) {
+app.get('/', (req, res, next) => {
   console.log('/ path success')
-    res.send('/ pathe success')
+    res.send('/ path success')
 })
 
-app.get('/details', function(req, res, next) {
+app.get('/details', (req, res, next) => {
     PatientsData.find({})
     .then((data)=>{
         res.send(data)
     })
+    // 
+    .catch((err) => {
+        console.log(err)
+    })
 })
 
-app.post('/addpatient', function(req, res, next) {
-    PatientsData.create(req.body)
-    .then((data)=>{
+app.post('/addpatient', (req, res, next) => {
+    var userData = req.body;
+    PatientsData.create(userData)
+    .then((response)=>{
         console.log(req.body)
-        res.send('success ==>'+ data);
+        res.send('success ==>'+ response);
     })
     .catch((err) => {
         console.log(err)

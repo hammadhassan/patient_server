@@ -1,13 +1,13 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var userSchema = new Schema({
+var patientSchema = new Schema({
     name: String,
     problem: String,
     gender: String,
-    doc: String,
+    doctor: String,
     day: String
 })
 
-var PatientsData = mongoose.model("Patient", userSchema)
+var PatientsData = mongoose.model("Patient", patientSchema)
 module.exports = PatientsData;
